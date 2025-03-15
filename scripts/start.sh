@@ -2068,9 +2068,9 @@ webget)
 	if [ -n "$(pidof CrashCore)" ]; then
 		[ -n "$authentication" ] && auth="$authentication@"
 		export all_proxy="http://${auth}127.0.0.1:$mix_port"
-		url=$(echo $3 | sed 's#https://.*jsdelivr.net/gh/juewuy/ShellCrash[@|/]#https://raw.githubusercontent.com/juewuy/ShellCrash/#' | sed 's#https://gh.jwsc.eu.org/#https://raw.githubusercontent.com/juewuy/ShellCrash/#')
+		url=$(echo $3 | sed 's#https://.*jsdelivr.net/gh/juewuy/ShellCrash[@|/]#https://raw.githubusercontent.com/juewuy/ShellCrash/#' | sed 's#https://ghproxy.cfd/https://raw.githubusercontent.com/juewuy/ShellCrash/#https://raw.githubusercontent.com/juewuy/ShellCrash/#')
 	else
-		url=$(echo $3 | sed 's#https://raw.githubusercontent.com/juewuy/ShellCrash/#https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@#')
+		url=$(echo $3 | sed 's#https://raw.githubusercontent.com/juewuy/ShellCrash/#https://ghproxy.cfd/https://raw.githubusercontent.com/juewuy/ShellCrash/#')
 	fi
 	#参数【$2】代表下载目录，【$3】代表在线地址
 	#参数【$4】代表输出显示，【$4】不启用重定向
